@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="feb0a587-798c-43b7-93dd-416dbe90a102" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.js" afterPath="$PROJECT_DIR$/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/city.js" afterPath="$PROJECT_DIR$/src/models/city.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/order.js" afterPath="$PROJECT_DIR$/src/models/order.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/restaurant.js" afterPath="$PROJECT_DIR$/src/models/restaurant.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/state.js" afterPath="$PROJECT_DIR$/src/models/state.js" />
     </list>
     <ignored path="place-my-order.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -229,12 +223,12 @@
       <updated>1469754200326</updated>
       <workItem from="1469754202312" duration="137000" />
       <workItem from="1469754402696" duration="2727000" />
-      <workItem from="1469757682509" duration="3943000" />
+      <workItem from="1469757682509" duration="4234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6807000" />
+    <option name="totallyTimeSpent" value="7098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="1337" extended-state="0" />
