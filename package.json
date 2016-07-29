@@ -14,7 +14,9 @@
     "start": "done-serve --port 8080",
     "develop": "done-serve --develop --proxy http://localhost:7070 --port 8080",
     "document": "documentjs",
-    "build": "node build"
+    "build": "node build",
+    "deploy": "firebase deploy",
+    "deploy:ci": "firebase deploy --token \"$FIREBASE_TOKEN\""
   },
   "main": "place-my-order/index.stache!done-autorender",
   "files": [
@@ -30,7 +32,12 @@
       "live-reload",
       "node_modules/can-zone/register"
     ],
-    "npmAlgorithm": "flat"
+    "npmAlgorithm": "flat",
+    "envs": {
+      "server-production": {
+        "renderingBaseURL": "https://place-my-order-starlap.firebaseapp.com/"
+      }
+    }
   },
   "dependencies": {
     "bit-tabs": "^0.2.1",
@@ -46,16 +53,19 @@
     "place-my-order-api": "^0.4.4",
     "place-my-order-assets": "^0.1.7",
     "steal": "^0.16.0",
+    "steal-platform": "0.0.4",
     "steal-socket.io": "^2.0.3"
   },
   "devDependencies": {
+    "can-fixture": "^0.1.2",
     "documentjs": "^0.4.2",
+    "donejs-cli": "^0.9.4",
     "donejs-deploy": "^0.4.0",
+    "firebase-tools": "^3.0.4",
     "funcunit": "~3.0.0",
+    "steal-cordova": "^0.1.4",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.16.0",
-    "testee": "^0.2.4",
-    "donejs-cli": "^0.9.4",
-    "can-fixture": "^0.1.2"
+    "testee": "^0.2.4"
   }
 }
