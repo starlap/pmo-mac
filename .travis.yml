@@ -1,5 +1,20 @@
 language: node_js
 node_js: node
 before_install:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  - 'export DISPLAY=:99.0'
+  - sh -e /etc/init.d/xvfb start
+before_deploy:
+  - git config --global user.email "me@example.com"
+  - git config --global user.name "PMO deploy bot"
+  - node build
+  - git add dist/ --force
+  - git commit -m "Updating build."
+  - node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+deploy:
+  skip_cleanup: true
+  provider: heroku
+  app: peaceful-shore-34753
+env:
+  global:
+    - secure: >-
+        pCJmaalhF7qyMvAg0epvCmY3U3H9VBrQhiuYf5JyUr6DFU3vljcQlgswPbTkbqsEc58iOtqaHegs5GjUw5YtTKMgncHOPoSnKrR49VHskddO4Ow/g43RLvP9Js5U58NYZAdCwjYRimhdvbQXN3DBsWhe2nvyg8M4TeEyZkgG3Ke73MgMtTcB5EC0qGwwL06C/lUD2edNspeZrGiVTsMg9J1EuhBvF6MveCst9WCeVWchXQvmAo8P6g4sUEG/mMOIzUVlXRCduWEilrqCyK4idV2j7c384tXTr0U+qRNICQ9zL+jxVcd5duAeavH2kKNAqQNiic7FNPTtfHqa4TCxVIgqUwYe+UbMgiFJmHb/N93iL0wpbGNV1TRmlnW76zXKHi2BU4Wj5hKSqfMGZfZWj/0NwMCN4eu4LYGClf09hXxW0Oc3hHJMoFuwkuvrn9XYq9fw5Q8CL0wgALL3yzLIdAzPtXod7Dg0SmCkKhS+y0Vq2Fr3HCoP1nhjU9YACDkyjN0KzrcF39DO2aDCCJGn3gz5SQA7uXVxyuDn9G/M/gy0mZdInDTj2y/p9xo9YQgKXh9gzCJcEHB2kww8M2gEvMQp2CVKQYet+wsNaOWn/Kb2XUHhQR3pkwkgtinisrtU3T3xo4faCrSFtaPGudKC5cjWVIavzn8iN6g0ygvQKek=
